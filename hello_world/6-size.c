@@ -12,10 +12,10 @@ int main(void)
  *size of takes argument
  * % z - Bytes 
  */
-printf("Size of a char: %zu", sizeof(char));
+printf("Size of a char: %zu\n", sizeof(char));
 printf("Size of an int: %zu\n", sizeof(int));
-printf("Size of a long int: %zu", sizeof(long int));
-printf("Size of a long long int: %zu", sizeof(long long int));
-printf("Size of a float: %zu", sizeof(float));
+printf("Size of a long int: %zu\n", sizeof(long int));
+printf("Size of a long long int: %zu\n", sizeof(long long int));
+printf("Size of a float: %zu\n", sizeof(float));
 return (0);
 }
