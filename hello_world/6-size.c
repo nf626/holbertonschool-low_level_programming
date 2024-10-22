@@ -8,7 +8,11 @@
  */
 int main(void)
 {
-printf("with proper grammar, but the outcome is a piece of art,\n");
+  printf("Size of a char: %u", sizeof(char));
+  printf("Size of an int: %d\n", sizeof(int));
+  printf("Size of a long int: %lu" sizeof(long int));
+  printf("Size of a long long int: %lu" sizeof(long long int));
+  printf("Size of a float: %lu" sizeof(float));
 
-return (0);
+  return (0);
 }
