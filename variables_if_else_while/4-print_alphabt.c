@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - Prints alphabet in lowercase.
+ * main - Prints alphabet in lowercase except for q and e.
  *
  * Return: Success
  *
@@ -12,12 +12,10 @@ int main(void)
 char c;
 for (c = 'a'; c <= 'z'; c++)
 {
-putchar(c);
-}
-
-for (c = 'A'; c <= 'Z'; c++)
+if (c != 'q' && c != 'e')
 {
 putchar(c);
+}
 }
 
 putchar('\n');
