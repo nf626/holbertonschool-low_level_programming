@@ -2,15 +2,17 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * add - Adds two integers and returns the result.
+ * @a: Formal parameter.
+ * @b: Formal parameter.
  *
- * Return: Always 0.
+ * Return: c.
  */
-int main(void)
+int add(int a, int b)
 {
-    int n;
+int c;
 
-    n = add(89, 9);
-    printf("%d\n", n);
-    return (0);
+c = a + b;
+
+return (c);
 }
