@@ -6,36 +6,34 @@
  * multiples of five print Buzz.
  *
  * Each number or word should be separated by a space
- * You are allowed to use the standard library 
+ * You are allowed to use the standard library
  *
  * Return: Nothing.
  */
-int main (void)
+int main(void)
 {
-  int i;
+int i;
 
-  for (i = 0; i <= 100; i++)
-    {
-      if (((i % 3) == 0) && ((i % 5) == 0))
-	{
-	  printf("FizzBuzz ");
-	}
-      
-      else if ((i % 5) == 0)
-	{
-	  printf("Buzz" );
-	}
-      
-      else if ((i % 3) == 0)
-	{
-	  printf("Fizz ");
-	}
-      
-      else
-	{
-	  printf("%d ", i);
-	}
-    }
+for (i = 1; i <= 100; i++)
+{
+if (i % 3 == 0 && i % 5 == 0)
+{
+printf("FizzBuzz ");
+}
+else if (i % 5 == 0)
+{
+printf("Buzz ");
+}
+else if (i % 3 == 0)
+{
+printf("Fizz ");
+}
+else
+{
+printf("%d ", i);
+}
+}
+printf("\n");
 
-  return (0);
+return (0);
 }
