@@ -8,24 +8,25 @@
 
 void print_square(int size)
 {
-int row, coloumn;
-coloumn = 0;
+int row = 0, coloumn = 0;
 
-if (size < 1)
+if (size > 0)
 {
-_putchar('\n');
-
-while (coloumn < size)
-{
-row = 0;
-
 while (row < size)
 {
+while (coloumn < size)
+{
 _putchar('#');
-row++;
-}
-_putchar('\n');
+
 coloumn++;
 }
+coloumn = 0;
+row++;
+_putchar('\n');
+}
+}
+else
+{
+_putchar('\n');
 }
 }
