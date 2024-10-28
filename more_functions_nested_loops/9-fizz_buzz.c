@@ -5,10 +5,7 @@
  * multiples of three print Fizz instead of the number.
  * multiples of five print Buzz.
  *
- * Each number or word should be separated by a space
- * You are allowed to use the standard library
- *
- * Return: Nothing.
+ * Return: 0
  */
 int main(void)
 {
