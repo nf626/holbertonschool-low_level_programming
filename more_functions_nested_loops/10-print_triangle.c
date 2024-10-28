@@ -14,7 +14,7 @@ b = size - 1;
 
 while (a < size)
 {
-b = size - 1 - a;
+b = size + 1 + a;
 c = a + 1;
 while (b > 0)
 {
