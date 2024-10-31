@@ -12,7 +12,7 @@ int temp;
 
 for (temp = 0; str[temp] != '\0'; temp++)
 {
-if (str[temp] % 2 == 0)
+if (temp % 2 == 0)
 {
 _putchar(str[temp]);
 }
