@@ -3,7 +3,7 @@
 
 /**
  * _strcpy - copies the string pointed to by src,
- * including the terminating null byte (\0), 
+ * including the terminating null byte (\0),
  * to the buffer pointed to by dest.
  * @dest: pointer to the destination array.
  * @src: string to be copied.
@@ -12,13 +12,12 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-  
-  *dest = *src;
+int size;
 
-  dest++;
-  src++;
-  
-  *dest = '\0';
-  
-  return (dest);
+for (size = 0; size <= *src; size++)
+{
+dest[size] = src[size];
+}
+
+return (dest);
 }
