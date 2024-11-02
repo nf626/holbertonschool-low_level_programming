@@ -3,19 +3,24 @@
 
 /**
  * _strncpy - copies the string.
- * @dest: pointer to the destination array.
- * @src: string to be copied.
+ * @dest: Print Asterisk (*).
+ * @src: String to be copied.
  * @n: n size.
  *
- * Return: Pointer to dest.
+ * Return: dest.
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-  int i = 0, j = 0;
+int i = 0;
 
-while (src[i] != '\0' && src[j] < n)
+while (src[i] != '\0' && i < n)
 {
 dest[i] = src[i];
+i++;
+}
+while (i < n)
+{
+dest[i] = '\0';
 i++;
 }
 dest[i++] = '\0';
