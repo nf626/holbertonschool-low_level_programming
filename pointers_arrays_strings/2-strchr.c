@@ -17,7 +17,7 @@ while (s[i] != '\0')
 {
 if (s[i] == c)
 {
-return ((char *) &s[i]);
+return (&s[i]);
 }
 i++;
 }
