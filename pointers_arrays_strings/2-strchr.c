@@ -18,7 +18,7 @@ if (*s == c)
 {
 return (s);
 }
-i++;
+s++;
 }
 return (NULL);
 }
