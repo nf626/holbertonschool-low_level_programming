@@ -18,9 +18,7 @@ if (*s == c)
 {
 return (s);
 }
-else
-{
-return (NULL);
+i++;
 }
-s++;
+return (NULL);
 }
