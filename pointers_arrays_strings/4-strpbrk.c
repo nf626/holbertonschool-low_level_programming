@@ -21,13 +21,13 @@ if (*s == accept[i])
 {
 return (s);
 }
-i++;
-}
-s++;
-}
 if (accept[i] == '\0')
 {
 return (s);
+}
+i++;
+}
+s++;
 }
 return (NULL);
 }
