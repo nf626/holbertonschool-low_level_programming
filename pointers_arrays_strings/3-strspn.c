@@ -11,7 +11,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 int i;
-unsigned int count;
+unsigned int count = 0;
 
 while (*s != '\0')
 {
@@ -23,11 +23,11 @@ if (accept[i] == *s)
 count = count + 1;
 break;
 }
-else if (accept[i + 1] == '\0')
+i++;
+}
+if (accept[i] == '\0')
 {
 return (count);
-}
-i++;
 }
 s++;
 }
