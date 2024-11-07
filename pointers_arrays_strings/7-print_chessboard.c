@@ -1,16 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_chessboard - prints the chessboard.
- * @a: Input coloumn.
+ * @a: a pointer to an array of 8 char.
  *
  * Return: 0.
  */
 void print_chessboard(char (*a)[8])
 {
-// char = 1 byte * row + col to find element in array[][]
+int i = 0, j;
+int size = 8;
 
-  char *pA = a;
+while (i < size)
+{
+j = 0;
+while (j < size)
+{
+_putchar(*(*(a + i) + j));
+j++;
+}
+_putchar('\n');
+i++;
+}
 
-  while 
 }
