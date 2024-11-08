@@ -8,14 +8,16 @@
  */
 int factorial(int n)
 {
-  int value;
-  
-  if (n == 1)
-  {
-    return (-1);
-  }
+int value;
 
-  value = n * factorial(n - 1);
-
-  return (value);
+if (n < 0)
+{
+return (-1);
+}
+else if (n == 0)
+{
+return (1);
+}
+value = n * factorial(n - 1);
+return (value);
 }
