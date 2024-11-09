@@ -1,24 +1,23 @@
 #include "main.h"
 
 /**
- * subtract - subtract value by odd numbers to 0.
+ * nat_sqr - subtract value by odd numbers to 0.
  * @x: variable from _sqrt_recursion.
- * @y:
+ * @y: 1 = True.
  *
  * Return: Square root variable.
  */
-int subtract(int x, int y)
-{
-  if ((x * x) == y)
+int nat_sqr(int x, int y)
+{ 
+  if ((x * x)  == y)
     {
       return (x);
     }
-  else if ((x * x) >= y)
+  else if ((x * x) < y)
     {
       return (-1);
     }
-  re
-  return _sqrt_recursion();
+  return (x * nat_sqr(x - 1, y));
 }
 
 /**
@@ -29,7 +28,5 @@ int subtract(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-  int num = 1;
-
-  return (n * subtract(n, 1));
+  return (nat_sqr(n, 1));
 }
