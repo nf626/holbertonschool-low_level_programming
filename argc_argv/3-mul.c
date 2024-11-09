@@ -12,16 +12,18 @@
  */
 int main(int argc, char *argv[])
 {
-int sum = 0;
+int sum;
+int not_Two = 0;
 
 if (argc != 3)
+{
+printf("%s\n", "Error");
+not_Two = 1;
+}
+else
 {
 sum = atoi(argv[1]) * atoi(argv[2]);
 printf("%d\n", sum);
 }
-else
-{
-printf("%s\n", "Error");
-}
-return (0);
+return (not_Two);
 }
