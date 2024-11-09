@@ -1,13 +1,23 @@
 #include "main.h"
 
 /**
- * is_prime_number - input integer is a prime number.
- * @n: Value.
+ * checker - find if prime number.
+ * @x: Value passed by is_prime_number..
  *
- * Return: 1 is prime number, 0 not prime number.
+ * Return: value back to is_prime_number.
  */
-int primeNum(int x, int y)
+int checker(int x, int y)
 {
+  if (x == 1)
+    {
+      return (1);
+    }
+  else if(x > 2)
+    {
+      return (0);
+    }
+ 
+  return (checker(x, y + 1);
 }
 
 /**
@@ -18,10 +28,10 @@ int primeNum(int x, int y)
  */
 int is_prime_number(int n)
 {
-  if (n < 1)
+  if (n < 0)
     {
-      return (-1);
+      return (0);
     }
 
-  return (is_prime_number(int n));
+  return (checker(int n, 0));
 }
