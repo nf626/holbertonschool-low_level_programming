@@ -11,7 +11,7 @@ int nat_sqr(int x, int y)
 {
 if ((y * y) == x)
 {
-return (x);
+return (y);
 }
 else if ((y * y) > x)
 {
@@ -28,10 +28,5 @@ return (nat_sqr(x, y + 1));
  */
 int _sqrt_recursion(int n)
 {
-if (n < 0)
-{
-return (-1);
-}
-
 return (nat_sqr(n, 0));
 }
