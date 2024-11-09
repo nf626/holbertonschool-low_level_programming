@@ -3,21 +3,21 @@
 /**
  * nat_sqr - subtract value by odd numbers to 0.
  * @x: variable from _sqrt_recursion.
- * @y: 1 = True.
+ * @y: y = 0.
  *
- * Return: Square root variable.
+ * Return: value back to _sqrt_recursion..
  */
 int nat_sqr(int x, int y)
-{ 
-  if ((x * x)  == y)
-    {
-      return (x);
-    }
-  else if ((x * x) < y)
-    {
-      return (-1);
-    }
-  return (x * nat_sqr(x - 1, y));
+{
+if ((y * y) == x)
+{
+return (x);
+}
+else if ((y * y) > x)
+{
+return (-1);
+}
+return (nat_sqr(x, y + 1));
 }
 
 /**
@@ -28,5 +28,10 @@ int nat_sqr(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-  return (nat_sqr(n, 1));
+if (n < 0)
+{
+return (-1);
+}
+
+return (nat_sqr(n, 0));
 }
