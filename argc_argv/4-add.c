@@ -13,29 +13,32 @@
  */
 int main(int argc, char *argv[])
 {
-int sum, i, j;
+int i;
+unsigned int sum = 0, j;
+char *ptr;
 
-if (argc == 1)
-{
-printf("0\n");
-return (0);
-}
 if (argc > 1)
 {
 for (i = 1; i < argc; i++)
 {
-sum = sum + atoi(argv[i]);
+ptr = argv[i];
+
 for (j = 0; argv[i][j] != '\0'; j++)
 {
-printf("argv[%d][%d] = %d\n", i, j, argv[i][j]);
-if (!isdigit(argv[i][j]))
+if (ptr[j] < 48 || ptr[j] > 57)
 {
 printf("Error\n");
 return (1);
 }
 }
+sum = sum + atoi(argv[i]);
+ptr++;
 }
 printf("%d\n", sum);
+}
+else
+{
+printf("0\n");
 }
 return (0);
 }
