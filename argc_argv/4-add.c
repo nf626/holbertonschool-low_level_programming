@@ -12,14 +12,16 @@
  */
 int main(int argc, char *argv[])
 {
-int sum, i = 1, j;
+int sum, i = 1;
 char *ptr;
 
+if (argc > 1)
+{
+printf("arguments = %d\n", argc);
 while (i < argc)
 {
+int j = 0;
 ptr = argv[i];
-j = 0;
-
 while (ptr[j] != '\0')
 {
 if (ptr[j] < '0' || ptr[j] > '9')
@@ -29,8 +31,10 @@ return (1);
 }
 j++;
 }
+printf("argv[%d] = %s\n", i, argv[i]);
 sum = sum + atoi(argv[i]);
 i++;
+}
 }
 printf("%d\n", sum);
 
