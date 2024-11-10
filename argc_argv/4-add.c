@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - adds positive numbers.
@@ -13,27 +12,27 @@
  */
 int main(int argc, char *argv[])
 {
-  int sum, x = 0;
-  
-  printf("number of arguements = %d\n", argc);
-  
-  if (argc > 1)
-    {
-      int i = 1;
-      int value = 0;
-      while (i < argc)
-	{
-	  printf("argv[%d] = %s\n\n", i, argv[i]);
-	  value = atoi(argv[i]);
-	  printf("index value = %d\n", value);
-	  sum = sum + atoi(argv[i]); 
-	  i++;
-	}
-      printf("%d\n", sum); 
-    }
- else
-   {
-     printf("%d\n", x);
-   }
- return (x);
+int sum, i = 1, j;
+char *ptr;
+
+while (i < argc)
+{
+ptr = argv[i];
+j = 0;
+
+while (ptr[j] != '\0')
+{
+if (ptr[j] < '0' || ptr[j] > '9')
+{
+printf("Error\n");
+return (1);
+}
+j++;
+}
+sum = sum + atoi(argv[i]);
+i++;
+}
+printf("%d\n", sum);
+
+return (0);
 }
