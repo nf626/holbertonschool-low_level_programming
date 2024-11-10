@@ -13,30 +13,30 @@
 int main(int argc, char *argv[])
 {
 int sum, i = 1;
-char *ptr;
 
+if (argc < 2)
+{
+printf("0\n");
+return (0);
+}
 if (argc > 1)
 {
-printf("arguments = %d\n", argc);
+int j = 0;
 while (i < argc)
 {
-int j = 0;
-ptr = argv[i];
-while (ptr[j] != '\0')
+while (argv[i][j] != '\0')
 {
-if (ptr[j] < '0' || ptr[j] > '9')
+if (argv[i][j] < '0' || argv[i][j] > '9')
 {
 printf("Error\n");
 return (1);
 }
 j++;
 }
-printf("argv[%d] = %s\n", i, argv[i]);
 sum = sum + atoi(argv[i]);
 i++;
 }
 }
 printf("%d\n", sum);
-
 return (0);
 }
