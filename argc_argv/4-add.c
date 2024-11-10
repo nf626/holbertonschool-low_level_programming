@@ -13,7 +13,7 @@
  */
 int main(int argc, char *argv[])
 {
-  int sum;
+  int sum, x = 0;
 
   printf("number of arguements = %d\n", argc);
   
@@ -29,5 +29,9 @@ int main(int argc, char *argv[])
 	}
       printf("%d\n", sum);
     }
+ else
+   {
+     printf("%d\n", x);
+   }
   return (0);
 }
