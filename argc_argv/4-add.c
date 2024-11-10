@@ -15,14 +15,14 @@ int main(int argc, char *argv[])
 {
   int sum, x = 0;
 
-  printf("number of arguements = %d\n", argc);
+  printf("number of arguements = %d\n\n", argc);
   
  if (argc > 1)
     {
       int i = 1;
       while (i < argc)
 	{
-	  printf("argv[%d] = %s\n", i, argv[i]);
+	  printf("argv[%d] = %s\n\n", i, argv[i]);
 
 	  sum = sum + atoi(argv[i]);
 	  i++;
