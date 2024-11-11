@@ -23,7 +23,12 @@ char *_strdup(char *str)
 
   if (array == NULL)
     {
-      
+      return (NULL);
+    }
+
+  while (i < )
+    {
+      *array = *str;
     }
   return (str);		 
 }
