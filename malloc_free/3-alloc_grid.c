@@ -17,18 +17,18 @@ if (width <= 0 || height <= 0)
 {
 return (NULL);
 }
-/** Row memory allocation */
-array = malloc(sizeof(int *) * width);
+/** height memory allocation */
+array = malloc(sizeof(int *) * height);
 /** Failure */
 if (array == NULL)
 {
 free(array);
 return (NULL);
 }
-/** Coloumn memory allocation */
-for (i = 0; i < width; i++)
+/** width memory allocation */
+for (i = 0; i < height; i++)
 {
-array[i] = malloc(sizeof(int) * height);
+array[i] = malloc(sizeof(int) * width);
 if (array[i] == NULL)
 {
 for (j = i; j >= 0; j--)
@@ -40,9 +40,9 @@ return (NULL);
 }
 }
 k = 0, l = 0;
-while (k < width)
+while (k < height)
 {
-while (l < height)
+while (l < width)
 {
 array[k][l] = 0;
 l++;
