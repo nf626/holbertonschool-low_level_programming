@@ -18,24 +18,25 @@ if (*str == '\0')
 {
 return (NULL);
 }
-
-array = malloc(sizeof(char) * 1 + 1);
-
 while (str[i] != '\0')
 {
 length = length + 1;
 i++;
 }
-while (j < length)
+array = malloc(sizeof(char) * (length + 1);
+while (str[i] != '\0')
 {
-array[j] = str[j];
-j++;
+array[i] = str[i];
+i++;
 }
-
+if (i < length)
+{
+array[i] = '\0';
+i++;
+}
 if (array == NULL)
 {
 return (NULL);
 }
-
 return (array);
 }
