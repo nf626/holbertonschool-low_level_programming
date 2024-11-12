@@ -53,6 +53,7 @@ str[k] = '\0';
 
 if (str == NULL)
 {
+free(str);
 return (NULL);
 }
 return (str);
