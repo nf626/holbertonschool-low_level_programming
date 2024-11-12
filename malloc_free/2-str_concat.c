@@ -16,12 +16,6 @@ if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
-
-if (str == NULL)
-{
-free(str);
-return (NULL);
-}
 while (s1[i] != '\0')
 i++;
 while (s2[j] != '\0')
@@ -29,6 +23,11 @@ j++;
 
 total = i + j;
 str = malloc(sizeof(char) * (total + 1));
+if (str == NULL)
+{
+free(str);
+return (NULL);
+}
 j = 0;
 while (k < total)
 {
