@@ -11,24 +11,27 @@
  */
 char *_strdup(char *str)
 {
-  int i = 0;
-  char *array;
+int i = 0;
+char *array;
 
-  if (*str == '\0')
-    {
-      return (NULL);
-    }
+if (*str == '\0')
+{
+return (NULL);
+}
 
-  array = malloc(sizeof(char) * 1);
+array = malloc(sizeof(char) * 1 + 1);
 
-  if (array == NULL)
-    {
-      return (NULL);
-    }
+while (str[i] != '\0')
+{
+array[i] = str[i];
+i++;
+}
 
-  while (i < )
-    {
-      *array = *str;
-    }
-  return (str);		 
+if (array == NULL)
+{
+free(array);
+return (NULL);
+}
+
+return (array);
 }
