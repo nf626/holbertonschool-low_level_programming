@@ -11,25 +11,31 @@
  */
 char *_strdup(char *str)
 {
-int i = 0;
+int length = 1, i = 0;
 char *array;
-
-array = malloc(sizeof(char) * 100);
 
 if (*str == '\0')
 {
 return (NULL);
 }
 
-while (str[i] != '\0')
+while (str[length] != '\0')
 {
-array[i] = str[i];
-i++;
+length++;
 }
+array = malloc(sizeof(char) * (length + 1));
+
 if (array == NULL)
 {
 free(array);
 return (NULL);
 }
+
+while (i < length)
+{
+array[i] = str[i];
+i++;
+}
+array[i] = '\0';
 return (array);
 }
