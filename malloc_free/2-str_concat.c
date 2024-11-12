@@ -16,6 +16,12 @@ if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
+
+if (str == NULL)
+{
+free(str);
+return (NULL);
+}
 while (s1[i] != '\0')
 i++;
 while (s2[j] != '\0')
@@ -36,11 +42,6 @@ str[k] = s2[j];
 j++;
 }
 k++;
-}
-if (str == NULL)
-{
-free(str);
-return (NULL);
 }
 str[k] = '\0';
 return (str);
