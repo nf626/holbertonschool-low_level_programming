@@ -17,7 +17,7 @@ if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-array = malloc(sizeof(size));
+array = malloc(nmemb * size);
 if (array == NULL)
 {
 free(array);
