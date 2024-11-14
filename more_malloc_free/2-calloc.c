@@ -23,7 +23,7 @@ if (array == NULL)
 free(array);
 return (NULL);
 }
-while (i < size)
+while (i < (nmemb * size))
 {
 array[i] = 0;
 i++;
