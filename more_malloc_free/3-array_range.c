@@ -18,7 +18,7 @@ if (min > max)
 {
 return (NULL);
 }
-array = malloc(sizeof(int) * (sizeof(int) + (max - min)));
+array = malloc((sizeof(int) * (max - min)) + sizeof(int));
 if (array == NULL)
 {
 free(array);
