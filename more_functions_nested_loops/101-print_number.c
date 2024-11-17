@@ -18,10 +18,10 @@ else
 {
 num = n;
 }
-num = num / 10;
-if (num != 0)
+
+if (num / 10)
 {
-print_number(num);
+print_number(num / 10);
 }
 _putchar((num % 10) + '0');
 }
