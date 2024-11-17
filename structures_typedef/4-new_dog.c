@@ -15,16 +15,14 @@ unsigned int i = 0, j = 0, k = 0;
 dog_t *ndog;
 if (name == NULL || owner == NULL)
 return (NULL);
-while (name[i] != '\0')
-i++;
-while (owner[j] != '\0')
-j++;
 ndog = malloc(sizeof(dog_t));
 if (ndog == NULL)
 {
 free(ndog);
 return (NULL);
 }
+while (name[i] != '\0')
+i++;
 ndog->name = malloc(sizeof(char) * i);
 if (ndog->name == NULL)
 {
@@ -37,6 +35,8 @@ ndog->name[k] = name[k];
 k++;
 }
 ndog->age = age;
+while (owner[j] != '\0')
+j++;
 ndog->owner = malloc(sizeof(char) * j);
 if (ndog->owner == NULL)
 {
