@@ -1,5 +1,5 @@
-#ifndef HEADER_FILE_NAME
-#define HEADER_FILE_NAME
+#ifndef HEADER_FILE
+#define HEADER_FILE
 
 /**
  * struct dog - structure.
@@ -15,3 +15,4 @@ char *name;
 float age;
 char *owner;
 };
+#endif
