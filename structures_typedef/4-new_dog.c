@@ -40,6 +40,7 @@ ndog->age = age;
 ndog->owner = malloc(sizeof(char) * j);
 if (ndog->owner == NULL)
 {
+free(ndog->name);
 free(ndog);
 return (NULL);
 }
