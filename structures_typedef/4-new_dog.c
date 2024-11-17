@@ -17,11 +17,9 @@ if (name == NULL || owner == NULL)
 return (NULL);
 ndog = malloc(sizeof(dog_t));
 if (ndog == NULL)
-{
-free(ndog);
 return (NULL);
-}
-while (name[i] != '\0')
+for (i = 0; name[i]; i++)
+;
 i++;
 ndog->name = malloc(sizeof(char) * i);
 if (ndog->name == NULL)
@@ -29,13 +27,11 @@ if (ndog->name == NULL)
 free(ndog);
 return (NULL);
 }
-while (k < i)
-{
+for (k = 0; k < i; k++)
 ndog->name[k] = name[k];
-k++;
-}
 ndog->age = age;
-while (owner[j] != '\0')
+for (j = 0; owner[j]; j++)
+;
 j++;
 ndog->owner = malloc(sizeof(char) * j);
 if (ndog->owner == NULL)
@@ -44,11 +40,7 @@ free(ndog->name);
 free(ndog);
 return (NULL);
 }
-k = 0;
-while (k < j)
-{
+for (k = 0; k < j; k++)
 ndog->owner[k] = owner[k];
-k++;
-}
 return (ndog);
 }
