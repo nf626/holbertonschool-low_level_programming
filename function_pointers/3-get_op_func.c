@@ -20,14 +20,14 @@ op_t ops[] = {
         {NULL, NULL}
     };
     int i;
-
+    
     while (s[i] != NULL)
       {
 	if (s[i] != '+' || s[i] != '-' || s[i] != '*' || s[i] != '/' || s[i] != '%')
 	  {
 	    return (NULL);
 	  }
-	get_op_func("+");
+	get_op_func("+")->op_add;
 	i++;
       }
     return ();
