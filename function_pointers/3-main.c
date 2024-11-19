@@ -8,15 +8,15 @@
  */
 int main(int argc, char *argv[])
 {
-  atoi ();
-  if ()
+  if (argc != 4)
     {
+      printf("Error\n");
+      exit(98);
     }
-  if ()
+  if (operator == 0)
     {
-    }
-  if ()
-    {
+      printf("Error\n");
+      exit(99)
     }
   return (0);
 }

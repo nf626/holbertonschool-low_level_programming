@@ -21,7 +21,7 @@ op_t ops[] = {
     };
     int i;
     
-    while (i < )
+    while (i < 5)
       {
 	if ()
 	  {
