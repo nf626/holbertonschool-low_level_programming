@@ -21,14 +21,13 @@ op_t ops[] = {
     };
     int i;
     
-    while (s[i] != NULL)
+    while (i < )
       {
-	if (s[i] != '+' || s[i] != '-' || s[i] != '*' || s[i] != '/' || s[i] != '%')
+	if ()
 	  {
-	    return (NULL);
+	   ops[i].
 	  }
-	get_op_func("+")->op_add;
 	i++;
       }
-    return ();
+    return (s);
 }
