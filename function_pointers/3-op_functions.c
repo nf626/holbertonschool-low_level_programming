@@ -15,7 +15,7 @@ return (a + b);
 }
 
 /**
- * op_sub - the difference of a and b. 
+ * op_sub - the difference of a and b.
  * @a: value a.
  * @b: value b.
  *
