@@ -14,12 +14,5 @@ void print_char_pointer();
  */
 void print_all(const char * const format, ...)
 {
-  print_list[] = {{},
-		  {NULL, NULL}};
 
-  unsigned int i = 0;
-  va_list args;
-  va_start(args, format);
-  printf("\n");
-  va_end(args);
 }
