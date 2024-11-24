@@ -4,14 +4,14 @@
 
 typedef struct {
   char *ptr;
-  void (*function_ptr)();
+  void (*function_ptr)(char *comma, va_list args); /** separator ',' */
 } format_list;
 
 /** function declaration/prototype */
-void print_char();
-void print_int();
-void print_float();
-void print_char_pointer();
+void print_char(char *comma, );
+void print_int(char *comma, );
+void print_float(char *comma, );
+void print_char_pointer(char *comma, );
 
 /**
  * print_all -  function that prints anything.
@@ -22,13 +22,14 @@ void print_char_pointer();
 /** print_all("ceis", 'B', 3, "stSchool"); */
 void print_all(const char * const format, ...)
 {
-  /** structure 2D array - *prt -> c, *function_ptr ->  */
-  format_list format_types = {{"c", },
-			      {"i", },
-			      {"f", },
-			      {"s", }};
+  /** structure stores format_types variable into 2D array = *prt -> c, *function_ptr -> print_char 
+      eg. array[0] = c, go into print_char function */
+  format_list format_types = {{"c", print_char},
+			      {"i", print_int},
+			      {"f", print_float},
+			      {"s", print_char_pointer}};
   va_list args;
-  va_start(args, format);
+  va_start(args, format); /** points to first element in variadic function eg. B -> 3 -> stSchool */
 
   va_end(args);
 
@@ -36,23 +37,34 @@ void print_all(const char * const format, ...)
 }
 
 /** function definition - void return nothing */
-void print_char()
+void print_char(char *comma, va_list args)
 {
-  printf("%c\n", );
+  printf("%s%c\n", comma, );
 }
-void print_int()
+
+void print_int(char *comma, va_list args)
 {
-  printf("%d\n",);
+  printf("%s%d\n", comma, );
 }
-void print_float()
+
+void print_float(char *comma, va_list args)
 {
-  printf("%f\n",);
+  printf("%s%f\n", comma, );
 }
-void print_char_pointer()
+
+void print_char_pointer(char *comma, va_list args)
 {
-  if (string == NULL)
+  char *str;
+  /** assign the string (the pointer to the first character of the string) to str. 
+      extracts the next argument from the args list, expecting it to be a string (char *),
+      and assigns it to the variable str.
+      retrieves the next argument from the args list, and it's expected to be a char * (a string).
+      The returned value is stored in the pointer str.
+  */
+  str = va_arg(args, char *); 
+  if (str == NULL)
     {
-      printf("%s\n", "(nil)");
+      printf("%s%s", comma, "(nil)");
     }
-  printf("%s\n",);
+  printf("%s%s\n", comma, str);
 }
