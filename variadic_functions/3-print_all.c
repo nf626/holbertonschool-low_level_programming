@@ -10,7 +10,7 @@
  */
 void print_char(char *comma, va_list args)
 {
-  printf("%s%c", comma, va_arg(args, int));
+printf("%s%c", comma, va_arg(args, int));
 }
 
 /**
@@ -21,7 +21,7 @@ void print_char(char *comma, va_list args)
  */
 void print_int(char *comma, va_list args)
 {
-  printf("%s%d", comma, va_arg(args, int));
+printf("%s%d", comma, va_arg(args, int));
 }
 
 /**
@@ -32,7 +32,7 @@ void print_int(char *comma, va_list args)
  */
 void print_float(char *comma, va_list args)
 {
-  printf("%s%f", comma, va_arg(args, double));
+printf("%s%f", comma, va_arg(args, double));
 }
 
 /**
@@ -43,14 +43,14 @@ void print_float(char *comma, va_list args)
  */
 void print_char_pointer(char *comma, va_list args)
 {
-  char *str;
-  str = va_arg(args, char *); 
-  if (str == NULL)
-    {
-      printf("%s%s", comma, "(nil)");
-      return;
-    }
-  printf("%s%s", comma, str);
+char *str;
+str = va_arg(args, char *);
+if (str == NULL)
+{
+printf("%s%s", comma, "(nil)");
+return;
+}
+printf("%s%s", comma, str);
 }
 
 /**
@@ -58,34 +58,30 @@ void print_char_pointer(char *comma, va_list args)
  * @format: list of types of arguments passed to the function.
  *
  */
-
-/** print_all("ceis", 'B', 3, "stSchool"); */
 void print_all(const char * const format, ...)
 {
-  unsigned int i = 0, j;
-  char *comma = "";
-  va_list args;
-  /** structure stores format_types variable into 2D array = *prt -> c, *function_ptr -> print_char 
-      eg. array[0] = c, go into print_char function */
-  format_list format_types[] = { {"c", print_char}, {"i", print_int},
-			      {"f", print_float}, {"s", print_char_pointer}};
+unsigned int i = 0, j;
+char *comma = "";
+va_list args;
+format_list format_types[] = { {"c", print_char}, {"i", print_int},
+			       {"f", print_float}, {"s", print_char_pointer}};
 
-  va_start(args, format); /** points to first element in variadic function eg. B -> 3 -> stSchool */
+va_start(args, format);
 
-  while (format != NULL && format[i]) /** format not empty and is true */
-    {
-      j = 0;
-      while (j < 4)
-	{
-	  if (format[i] == *format_types[j].ptr)
-	    {
-	      format_types[j].function_ptr(comma, args);
-	      comma = ", ";
-	    }
-	  j++;
-	}
-      i++;
-    }
-  printf("\n");
-  va_end(args);
+while (format != NULL && format[i])
+{
+j = 0;
+while (j < 4)
+{
+if (format[i] == *format_types[j].ptr)
+{
+format_types[j].function_ptr(comma, args);
+comma = ", ";
+}
+j++;
+}
+i++;
+}
+printf("\n");
+va_end(args);
 }
