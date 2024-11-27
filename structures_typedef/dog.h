@@ -17,7 +17,7 @@ char *owner;
 };
 
 /**
- * dog_t - Typedef structure of new name dog.
+ * dog_t - Typedef struct of new name dog.
  *
  */
 typedef struct dog dog_t;
