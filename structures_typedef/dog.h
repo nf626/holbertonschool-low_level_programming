@@ -17,7 +17,7 @@ char *owner;
 };
 
 /**
- * New name for structure dog.
+ * struct dog dog_t - Structure of new name dog.
  * typedef = alias.
  */
 typedef struct dog dog_t;
