@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints possible combinations of single digit numbers.
+ * main - prints all possible different combinations of three digits.
  *        No repeats.
  *
  * Numbers must be separated by ',', followed by a space.
