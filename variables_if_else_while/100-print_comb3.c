@@ -2,6 +2,7 @@
 
 /**
  * main - prints all possible different combinations of two digits.
+ *        without repeats.
  *
  * Numbers must be separated by ',', followed by a space.
  * only use putchar.
@@ -19,17 +20,26 @@ while (num1 <= '9')
 num2 = '0';
 while (num2 <= '9')
 {
+if (num2 == num1)
+{
+}
+else if (num1 > num2)
+{
+}
+else
+{
 putchar(num1);
 putchar(num2);
-
-if ((num1 != '9') || (num1 == '9' && num2 != '9'))
+if (num2 == '9' && num1 == '8')
 {
+break;
+}
 putchar(',');
 putchar(' ');
 }
-num2 = num2 + 1;
+num2++;
 }
-num1 = num1 + 1;
+num1++;
 }
 putchar('\n');
 return (0);
