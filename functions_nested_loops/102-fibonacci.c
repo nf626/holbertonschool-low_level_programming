@@ -19,6 +19,10 @@ int main(void)
 	  prev = next;
 	  next = current;
 	  printf("%ld, ", current);
+	  if (i == 49)
+	    {
+	      printf("%ld", current);
+	    }
 	}
       else if (i == 1)
 	{
