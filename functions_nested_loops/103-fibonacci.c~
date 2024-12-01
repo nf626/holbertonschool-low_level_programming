@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+/**
+ * main - finds and prints the sum of the even-valued terms,
+ *        followed by a new line.
+ *
+ * Return: 0, Success.
+ */
+int main(void)
+{
+int i = 0;
+long prev = 1, next = 2, current;
+
+ while (i < 4000000)
+   {
+     if ( % 2 == 0)
+       {
+       }
+     i++;
+   }
+ printf("%ld\n", );
+return (0);
+}
