@@ -18,20 +18,15 @@ int main(void)
 	  current = prev + next;
 	  prev = next;
 	  next = current;
-	  printf("%ld", current);
+	  printf(", %ld", current);
 	}
-      else if (i == 1)
+       else if (i == 1)
 	{
 	  printf("%ld", prev);
 	}
       else if (i == 2)
 	{
-	  printf("%ld", next);
-	}
-      if (i != 50)
-	{
-	  putchar(',');
-	  putchar(' ');
+	  printf(", %ld", next);
 	}
       i++;
     }
