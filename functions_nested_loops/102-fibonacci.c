@@ -11,26 +11,27 @@ int main(void)
   int i = 0;
   long prev = 1, next = 2, current; 
 
-  while (i < 50)
+  while (i <= 50)
     {
       if (i > 2)
 	{
 	  current = prev + next;
 	  prev = next;
 	  next = current;
-	  printf("%ld, ", current);
-	  if (i == 49)
-	    {
-	      printf("%ld", current);
-	    }
+	  printf("%ld", current);
 	}
       else if (i == 1)
 	{
-	  printf("%ld, ", prev);
+	  printf("%ld", prev);
 	}
       else if (i == 2)
 	{
-	  printf("%ld, ", next);
+	  printf("%ld", next);
+	}
+      if (i != 50)
+	{
+	  putchar(',');
+	  putchar(' ');
 	}
       i++;
     }
