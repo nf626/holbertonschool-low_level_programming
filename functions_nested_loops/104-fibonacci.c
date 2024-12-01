@@ -9,24 +9,24 @@
 int main(void)
 {
 int i = 0;
-long prev = 1, next = 2, current;
+double prev = 1, next = 2, current;
 
-while (i <= 98)
+while (i <= 99)
 {
 if (i > 2)
 {
 current = prev + next;
 prev = next;
 next = current;
-printf(", %ld", current);
+printf(", %.0lf", current);
 }
 else if (i == 1)
 {
-printf("%ld", prev);
+printf("%.0lf", prev);
 }
 else if (i == 2)
 {
-printf(", %ld", next);
+printf(", %.0lf", next);
 }
 i++;
 }
