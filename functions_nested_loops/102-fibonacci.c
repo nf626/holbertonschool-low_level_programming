@@ -8,17 +8,10 @@
  */
 int main(void)
 {
-  int i = 1, prev, next, sum;
+  int i = 1, prev, next, current;
 
-  while (i <= 50)
-    {
-      prev = 0, next = 0, sum = 0;
-      prev = i;
-      next = i + 1;
-      sum = prev + next;
-      printf("%d, %d, %d, ", prev, next, sum);
-      i++;
-      sum = next;
+  while (i < 50)
+    {      i++;
     }
   return (0);
 }
