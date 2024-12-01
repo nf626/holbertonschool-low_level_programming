@@ -18,15 +18,15 @@ if (i > 2)
 current = prev + next;
 prev = next;
 next = current;
-printf(", %.lf", current);
+printf(", %f", current);
 }
 else if (i == 1)
 {
-printf("%.lf", prev);
+printf("%f", prev);
 }
 else if (i == 2)
 {
-printf(", %.lf", next);
+printf(", %f", next);
 }
 i++;
 }
