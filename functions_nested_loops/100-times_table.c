@@ -10,48 +10,46 @@
  */
 void print_times_table(int n)
 {
-  int x = 0, y = 0, one, ten, hund;
-  int sum = 0;
-  
-  if (n < 0 || n > 15)
+  int x = 0, y, sum = 0, one, ten, hund;
+
+  if (n >= 0 && n <= 15)
     {
-      exit(-1);
-    }
-  while (x <= n)
-    {
-      y = 0;
-      while (y <= n)
+      while (x <= n)
 	{
-	  sum = x * y;
-	  one = sum % 10;
-	  ten = sum % 100;
-	  hund = sum % 1000;
-	  if (hund == 0 && y != 0)
+	  y = 0;
+	  while (y <= n)
 	    {
-	      _putchar(' ');
-	      if (ten == 0)
+	      sum = x * y;
+	      one = sum % 10;
+	      ten = (sum / 10) % 100;
+	      hund = sum / 100;
+	      if (hund == 0 && y != 0)
 		{
 		  _putchar(' ');
+		  if (ten == 0)
+		    {
+		      _putchar(' ');
+		    }
+		  else
+		    {
+		      _putchar(ten + '0');
+		    }
 		}
-	      else
+	      else if (hund != 0)
 		{
+		  _putchar(hund + '0');
 		  _putchar(ten + '0');
 		}
+	      _putchar(one + '0');
+	      if (y != n)
+		{
+		  _putchar(',');
+		  _putchar(' ');
+		}
+	      y++;
 	    }
-	  else if (hund != 0)
-	    {
-	      _putchar(hund + '0');
-	      _putchar(ten + '0');
-	    }
-	  _putchar(one + '0');
-	  if (y != n)
-	    {
-	      _putchar(',');
-	      _putchar(' ');
-	    }
-	  y++;
+	  _putchar('\n');
+	  x++;
 	}
-      _putchar('\n');
-      x++;
     }
 }
