@@ -1,40 +1,57 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_times_table - prints the n times table, starting with 0.
  * If n is greater than 15 or less than 0 the function should not print anything.
- * @n: integer.
+ * @n: number of times table.
  *
  * Return: Always 0.
  */
 void print_times_table(int n)
 {
-  int x = 0, y, z;
-
+  int x = 0, y = 0, one, ten, hund;
+  int sum = 0;
+  
   if (n < 0 || n > 15)
     {
+      exit(-1);
     }
-  for (x = 0; x <= n; x++)
+  while (x <= n)
     {
-      _putchar('0');
-      
-      for (y = 1; y <= n; y++)
+      y = 0;
+      while (y <= n)
 	{
-	  _putchar(',');
-	  _putchar(' ');
-	  
-	  z = x * y;
-	  
-	  if (z <= n)
+	  sum = x * y;
+	  one = sum % 10;
+	  ten = sum % 100;
+	  hund = sum % 1000;
+	  if (hund == 0 && y != 0)
 	    {
 	      _putchar(' ');
+	      if (ten == 0)
+		{
+		  _putchar(' ');
+		}
+	      else
+		{
+		  _putchar(ten + '0');
+		}
 	    }
-	  else
+	  else if (hund != 0)
 	    {
-	      _putchar('0' + (z / 10));
+	      _putchar(hund + '0');
+	      _putchar(ten + '0');
 	    }
-	  _putchar('0' + (z % 10));
+	  _putchar(one + '0');
+	  if (y != n)
+	    {
+	      _putchar(',');
+	      _putchar(' ');
+	    }
+	  y++;
 	}
       _putchar('\n');
+      x++;
     }
 }
