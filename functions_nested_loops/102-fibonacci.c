@@ -8,7 +8,8 @@
  */
 int main(void)
 {
-  int i = 1, prev = 1, next = 2, current; 
+  int i = 0;
+  long prev = 1, next = 2, current; 
 
   while (i < 50)
     {
@@ -17,15 +18,15 @@ int main(void)
 	  current = prev + next;
 	  prev = next;
 	  next = current;
-	  printf("%d, ", current);
+	  printf("%ld, ", current);
 	}
       else if (i == 1)
 	{
-	  printf("%d, ", prev);
+	  printf("%ld, ", prev);
 	}
       else if (i == 2)
 	{
-	  printf("%d, ", next);
+	  printf("%ld, ", next);
 	}
       i++;
     }
