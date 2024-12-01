@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_times_table - prints the n times table, starting with 0.
@@ -19,7 +20,7 @@ while (y <= n)
 {
 sum = x * y;
 one = sum % 10;
-ten = (sum / 10) % 100;
+ten = (sum % 100) / 10;
 hund = sum / 100;
 if (hund == 0 && y != 0)
 {
