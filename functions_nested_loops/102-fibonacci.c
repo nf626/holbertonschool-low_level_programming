@@ -8,10 +8,27 @@
  */
 int main(void)
 {
-  int i = 1, prev, next, current;
+  int i = 1, prev = 1, next = 2, current; 
 
   while (i < 50)
-    {      i++;
+    {
+      if (i > 2)
+	{
+	  current = prev + next;
+	  prev = next;
+	  next = current;
+	  printf("%d, ", current);
+	}
+      else if (i == 1)
+	{
+	  printf("%d, ", prev);
+	}
+      else if (i == 2)
+	{
+	  printf("%d, ", next);
+	}
+      i++;
     }
+  printf("\n");
   return (0);
 }
