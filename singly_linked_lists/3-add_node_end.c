@@ -29,15 +29,15 @@ list_t *add_node_end(list_t **head, const char *str)
       free(last);
       return (NULL);
     }
-  /** initiate last ptr turn to node */
+
   last->str = strdup(str);
   last->len = count;
   last->next = NULL;
-
+  
   if (*head == NULL)
     {
       *head = last;
-      return (NULL);
+      return (last);
     }
   else
     {
@@ -48,5 +48,5 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
       current->next = last;
     }
-  return (last);
+  return (current);
 }
