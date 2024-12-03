@@ -14,39 +14,39 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-  unsigned int count = 0;
-  list_t *current = NULL;
-  list_t *last = NULL;
+unsigned int count = 0;
+list_t *current = NULL;
+list_t *last = NULL;
 
-  while (str[count] != '\0')
-    {
-      count++;
-    }
+while (str[count] != '\0')
+{
+count++;
+}
 
-  last = malloc(sizeof(list_t));
-  if (last == NULL)
-    {
-      free(last);
-      return (NULL);
-    }
+last = malloc(sizeof(list_t));
+if (last == NULL)
+{
+free(last);
+return (NULL);
+}
 
-  last->str = strdup(str);
-  last->len = count;
-  last->next = NULL;
-  
-  if (*head == NULL)
-    {
-      *head = last;
-      return (last);
-    }
-  else
-    {
-      current = *head;
-      while (current->next != NULL)
-	{
-	  current = current->next;
-	}
-      current->next = last;
-    }
-  return (current);
+last->str = strdup(str);
+last->len = count;
+last->next = NULL;
+
+if (*head == NULL)
+{
+*head = last;
+return (last);
+}
+else
+{
+current = *head;
+while (current->next != NULL)
+{
+current = current->next;
+}
+current->next = last;
+}
+return (current);
 }
