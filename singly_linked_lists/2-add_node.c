@@ -18,27 +18,32 @@ unsigned int count = 0;
 list_t *first = NULL;
 char *copy = NULL;
 
- copy = malloc(sizeof(char *));
- if (copy == NULL)
-   {
-     free(copy);
-     return (NULL);
-   }
- first = malloc(sizeof(list_t));
- if (first == NULL)
-   {
-     free(first);
-     return (NULL);
-   }
- copy = strdup(str);
- first->str = copy;
- while (copy[count] != '\0')
-   {
-     count++;
-   }
- first->len = count;
- first->next = *head;
- *head = first;
+copy = malloc(sizeof(char *));
+if (copy == NULL)
+{
+free(copy);
+return (NULL);
+}
+first = malloc(sizeof(list_t));
+if (first == NULL)
+{
+free(first);
+return (NULL);
+}
+copy = strdup(str);
+if (copy == NULL)
+{
+free(copy);
+return (NULL);
+}
+first->str = copy;
+while (copy[count] != '\0')
+{
+count++;
+}
+first->len = count;
+first->next = *head;
+*head = first;
 
- return (first);
+return (first);
 }
