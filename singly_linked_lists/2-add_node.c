@@ -14,6 +14,7 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
+unsigned int count = 0;
 list_t *first = NULL;
 char *copy = NULL;
 
@@ -32,9 +33,12 @@ return (NULL);
 }
 
 copy = strdup(str);
-
 first->str = copy;
-first->len = strlen(copy);
+while (copy[count] != '\0')
+{
+count++;
+}
+first->len = count;
 first->next = *head;
 *head = first;
 
