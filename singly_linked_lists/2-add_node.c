@@ -31,11 +31,11 @@ free(first);
 return (NULL);
 }
 copy = strdup(str);
-if (strdup(str) == NULL)
-{
-free(strdup(str));
-return (NULL);
-}
+ if (copy == NULL)
+   {
+     free(copy);
+     return (NULL);
+   }
 first->str = copy;
 while (copy[count] != '\0')
 {
