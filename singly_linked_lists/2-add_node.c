@@ -31,9 +31,9 @@ free(first);
 return (NULL);
 }
 copy = strdup(str);
-if (copy == NULL)
+if (strdup(str) == NULL)
 {
-free(copy);
+free(strdup(str));
 return (NULL);
 }
 first->str = copy;
