@@ -30,7 +30,7 @@ first->next = NULL;
 *head = first;
 }
 else
-{   
+{  
 first->next = *head;
 (*head)->prev = first;
 *head = first;
