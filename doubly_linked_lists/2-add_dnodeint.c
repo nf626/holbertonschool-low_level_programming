@@ -5,7 +5,7 @@
 
 /**
  * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
- * @h: argument is a pointer to a pointer to a list.
+ * @head: argument is a pointer to a pointer to a list.
  * @n: number of nodes.
  *
  * Return: the address of the new element, or NULL if it failed.
@@ -30,7 +30,7 @@ first->next = NULL;
 *head = first;
 }
 else
-{  
+{
 first->next = *head;
 (*head)->prev = first;
 *head = first;
