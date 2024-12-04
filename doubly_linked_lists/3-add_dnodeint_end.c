@@ -34,8 +34,11 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
   else
     {
       current = *head;
+      current->n = n;
+      current->prev = NULL;
       while (current->next != NULL)
 	{
+	  
 	  current = current->next;
 	}
       current->next = last;
