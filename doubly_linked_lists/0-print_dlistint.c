@@ -19,21 +19,11 @@ size_t print_dlistint(const dlistint_t *h)
     {
       free(new);
     }
-  
-  while (h != NULL)
+  new = h;
+  while (new != NULL)
     {
-      if (h == NULL)
-	{
-	  h = new;
-	  count++;
-	  return (count);
-	}
-      else
-	{
-	  new = h;
 	  new = new->next;
 	  count++;
-	}
     }
   return (count);
 }
