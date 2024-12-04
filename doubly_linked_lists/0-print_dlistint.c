@@ -12,17 +12,10 @@
 size_t print_dlistint(const dlistint_t *h)
 {
   unsigned int count = 0;
-  dlistint_t *new = NULL;
 
-  new = malloc(sizeof(dlistint_t));
-  if (new == NULL)
+  while (h != NULL)
     {
-      free(new);
-    }
-  new = h;
-  while (new != NULL)
-    {
-	  new = new->next;
+	  h = h->next;
 	  count++;
     }
   return (count);
