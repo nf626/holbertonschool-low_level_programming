@@ -21,6 +21,11 @@ current = *h;
 if (*h == NULL && idx == 0)
 return (NULL);
 new = malloc(sizeof(dlistint_t));
+if (new == NULL)
+{
+free(new);
+return (NULL);
+}
 if (*h != NULL)
 {
 count = 0;
