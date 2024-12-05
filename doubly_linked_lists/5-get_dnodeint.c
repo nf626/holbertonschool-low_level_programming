@@ -15,10 +15,31 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-  while (head != NULL)
+  unsigned int count = 0;
+  /** Pointer to start of list */
+  dlistint_t *new = NULL;
+  new = malloc(sizeof(dlistint_t));
+  if (new == NULL)
     {
-      head = head->next;
+      free(new);
+      return (NULL);
+    }
+
+  new->n = index;
+  new->prev = NULL;
+
+  if (head == NULL)
+    {
+      new->next = NULL;
+      head = new;
+    }
+
+  new = head;
+  while (new->next != NULL)
+    {
+      new = new->next;
+      count++;
       index++;
     }
-  return (head);
+  return (new);
 }
