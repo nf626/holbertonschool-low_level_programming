@@ -28,8 +28,9 @@ new->prev = NULL;
 
 while (head != NULL)
 {
+new->n = count;
 count++;
-if (count == index)
+if ((unsigned int)new->n == index)
 {
 return (head);
 }
