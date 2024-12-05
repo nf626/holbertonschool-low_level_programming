@@ -15,31 +15,6 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
   unsigned int count = 0;
-  /**Pointer to start of list h*/
-  dlistint_t *ptr = *h;
-  dlistint_t *new = NULL;
-  new = malloc(sizeof(dlistint_t));
-  if (new == NULL)
-    {
-      free(new);
-      return (NULL);
-    }
-
-  new->n = n;
-  new->prev = NULL;
-  new->next = NULL;
+  dlistint_t *new, *current, prev
   
-  while (ptr != NULL)
-    {
-      count++;
-      if (count == idx)
-	{
-	  return (ptr);
-	}
-      else
-	{
-	  ptr = ptr->next;
-	}
-    }
-  return (NULL);
 }

@@ -16,28 +16,16 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 unsigned int count = 0;
-dlistint_t *new = NULL;
-new = malloc(sizeof(dlistint_t));
-if (new == NULL)
-{
-free(new);
-return (NULL);
-}
+dlistint_t *new = head;
 
-new->prev = NULL;
-
-while (head != NULL)
-{
-new->n = count;
-count++;
-if ((unsigned int)new->n == index)
-{
-return (head);
-}
-else
-{
-head = head->next;
-}
-}
+ while (new != NULL)
+   {
+     if (count == index)
+       {
+	 return (new);
+       }
+	 new = new->next;
+	 count++;
+   }
 return (NULL);
 }
