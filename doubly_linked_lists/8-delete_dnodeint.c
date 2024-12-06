@@ -19,7 +19,7 @@ dlistint_t *pos = *head, *temp = *head;
 
 if ((index == 0) && (*head != NULL))
 {
-if ((*head)->next)
+if ((*head)->next != NULL)
 {
 *head = (*head)->next;
 (*head)->prev = NULL;
@@ -37,7 +37,7 @@ count++;
 if (pos != NULL)
 {
 temp = pos->next;
-if (temp->next)
+if (temp->next != NULL)
 temp->next->prev = pos;
 pos->next = temp->next;
 free(temp);
