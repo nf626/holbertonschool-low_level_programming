@@ -17,6 +17,11 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
   unsigned int count = 0;
   dlistint_t *temp = NULL;
 
+  temp = malloc(sizeof(dlistint_t));
+  if (temp == NULL)
+    {
+      free(temp);
+    }
   if (*head != NULL)
     {
       temp = *head;
