@@ -17,21 +17,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
   unsigned int count = 0;
   dlistint_t *temp = NULL;
 
-  temp = malloc(sizeof(dlistint_t));
-  if (temp == NULL)
-    {
-      free(temp);
-    }
   if (*head != NULL)
     {
       temp = *head;
-      if (index == 0)
+      if (index == 1)
 	{
 	  *head = (*head)->next;
 	  if (*head != NULL)
 	    {
 	      (*head)->prev = NULL;
 	    }
+	  free(temp);
 	  return (1);
 	}
       while (temp != NULL && count < index)
