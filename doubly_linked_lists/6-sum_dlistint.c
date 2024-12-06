@@ -13,7 +13,6 @@
 int sum_dlistint(dlistint_t *head)
 {
 dlistint_t *ptr = head;
-dlistint_t *new = NULL;
 int sum = 0;
 
 while (ptr != NULL)
