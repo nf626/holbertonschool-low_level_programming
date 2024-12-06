@@ -13,13 +13,20 @@
 int sum_dlistint(dlistint_t *head)
 {
 dlistint_t *ptr = head;
+dlistint_t *new = NULL;
 int sum = 0;
+
+new = malloc(sizeof(dlistint_t));
+if (new == NULL)
+{
+free(new);
+}
 
 while (ptr != NULL)
 {
-ptr = ptr->next;
+new = ptr->next;
 sum = sum + ptr->n;
-
+ptr = new;
 }
 return (sum);
 }
