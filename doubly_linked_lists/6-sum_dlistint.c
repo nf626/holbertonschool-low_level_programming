@@ -16,17 +16,11 @@ dlistint_t *ptr = head;
 dlistint_t *new = NULL;
 int sum = 0;
 
-new = malloc(sizeof(dlistint_t));
-if (new == NULL)
-{
-free(new);
-}
-
 while (ptr != NULL)
 {
-new = ptr->next;
+ptr = ptr->next;
 sum = sum + ptr->n;
-ptr = new;
+
 }
 return (sum);
 }
