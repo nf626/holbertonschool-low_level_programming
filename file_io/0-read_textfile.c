@@ -28,7 +28,7 @@ return (0);
 fd = open(filename, O_RDONLY);
 if (fd == -1)
 {
-free(buff);
+free(buffer);
 return (0);
 }
 nb_read = read(fd, buffer, letters);
