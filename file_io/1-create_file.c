@@ -27,17 +27,18 @@ while (text_content[i] != '\0')
 i = i + 1;
 }
 
-if (text_content != NULL)
+if (text_content == NULL)
 {
-write(fd, text_content, i);
-}
-else
-{
-fd = open(filename, O_RDWR | O_CREAT);
+fd = open(filename, O_WRONLY | O_CREAT);
 if (fd == -1)
 {
 return (-1);
 }
+return (1);
+}
+else
+{
+write(fd, text_content, i);
 }
 
 close(fd);
