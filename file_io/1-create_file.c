@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * str_length - Find string length.
+ * @string: pointer to null terminated string.
+ *
+ * Return: length of string.
+ */
+int str_length(char *string)
+{
+int length = 0;
+
+while (string[length] != '\0')
+{
+length = length + 1;
+}
+
+return (length);
+}
+/**
  * create_file - Function that creates a file.
  * @filename: name of the file to create.
  * @text_content: string to write to the file.
@@ -9,7 +26,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-int fd, i = 0;
+int fd;
 
 if (filename == NULL)
 {
@@ -22,23 +39,18 @@ if (fd == -1)
 return (-1);
 }
 
-while (text_content[i] != '\0')
+if (text_content != NULL)
 {
-i = i + 1;
+write(fd, text_content, str_length(text_content));
 }
-
-if (text_content == NULL)
+else
 {
-fd = open(filename, O_WRONLY | O_CREAT);
+fd = open(filename, O_RDWR | O_CREAT);
 if (fd == -1)
 {
 return (-1);
 }
 return (1);
-}
-else
-{
-write(fd, text_content, i);
 }
 
 close(fd);
