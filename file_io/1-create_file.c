@@ -31,6 +31,14 @@ if (text_content != NULL)
 {
 write(fd, text_content, i);
 }
+else
+{
+fd = open(filename, O_RDWR | O_CREAT);
+if (fd == -1)
+{
+return (-1);
+}
+}
 
 close(fd);
 return (1);
