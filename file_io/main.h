@@ -1,5 +1,6 @@
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
+#include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
