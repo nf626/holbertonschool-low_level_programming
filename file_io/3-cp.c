@@ -13,38 +13,38 @@ void copy_file(char *source, char *dest)
   source_fd = open(source, O_RDONLY);
   if (source == NULL || source_fd == -1)
     {
-      dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+      dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
       exit(98);
     }
 
   dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
   rd = read(source_fd, buffer, 1024);
 
-  while (rd != 0)
+  while (rd > 0)
     {
       wr = write(dest_fd, buffer, rd);
       if (wr != rd || dest_fd == -1)
 	{
-	  dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+	  dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 	  exit(99);
 	}
     }
 
   if (rd == -1)
     {
-      dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+      dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
       exit(98);
     }
   
   if (close(source_fd) == -1)
     {
-      dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+      dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
       exit(100);
     }
 
   if (close(dest_fd) == -1)
     {
-      dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+      dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
       exit(100);
     }
 }
