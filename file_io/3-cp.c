@@ -19,7 +19,7 @@ void copy_file(const char *source, const char *dest)
 
   dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-  while ((rd = read(source_fd, buffer, 1024) > 0)
+  while ((rd = read(source_fd, buffer, 1024) > 0))
     {
       wr = write(dest_fd, buffer, rd);
       if (wr != rd || dest_fd == -1)
