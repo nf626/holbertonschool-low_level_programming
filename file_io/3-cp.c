@@ -17,16 +17,10 @@ void copy_file(char *source, char *dest)
       exit(98);
     }
 
-  rd = read(source_fd, buffer, 1024);
-  if (rd == -1)
-    {
-      dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
-      exit(98);
-    }
-
   dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-  
-  while (rd > 0)
+  rd = read(source_fd, buffer, 1024);
+
+  while (rd != 0)
     {
       wr = write(dest_fd, buffer, rd);
       if (wr != rd || dest_fd == -1)
@@ -34,6 +28,12 @@ void copy_file(char *source, char *dest)
 	  dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
 	  exit(99);
 	}
+    }
+
+  if (rd == -1)
+    {
+      dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+      exit(98);
     }
   
   if (close(source_fd) == -1)
