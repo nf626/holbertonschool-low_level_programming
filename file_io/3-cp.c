@@ -7,7 +7,7 @@
  */
 void copy_file(const char *source, const char *dest)
 {
-  int source_fd, dest_fd, rd, wr;
+  int source_fd, dest_fd, rd;
   char buffer[1024];
 
   source_fd = open(source, O_RDONLY);
@@ -21,8 +21,7 @@ void copy_file(const char *source, const char *dest)
 
   while ((rd = read(source_fd, buffer, 1024) > 0))
     {
-      wr = write(dest_fd, buffer, rd);
-      if (wr != rd || dest_fd == -1)
+      if (write(dest_fd, buffer, rd) != rd || dest_fd == -1)
 	{
 	  dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 	  exit(99);
