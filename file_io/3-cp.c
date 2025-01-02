@@ -8,7 +8,7 @@
 void copy_file(char *source, char *dest)
 {
   int source_fd, dest_fd, wr, rd;
-  char buffer[2875];
+  char buffer[1024];
 
   source_fd = open(source, O_RDONLY);
   if (source == NULL || source_fd == -1)
@@ -17,7 +17,7 @@ void copy_file(char *source, char *dest)
       exit(98);
     }
 
-  dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+  dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
   rd = read(source_fd, buffer, 1024);
 
   while (rd > 0)
