@@ -5,48 +5,45 @@
  * @source: source file to copy.
  * @dest: copy of source file to destination file.
  */
-void copy_file(char *source, char *dest)
+void copy_file(const char *src, const char *dest)
 {
-  int source_fd, dest_fd, wr, rd;
-  char buffer[1024];
+	int ofd, tfd, readed;
+	char buff[1024];
 
-  source_fd = open(source, O_RDONLY);
-  if (source == NULL || source_fd == -1)
-    {
-      dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
-      exit(98);
-    }
-
-  dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-  rd = read(source_fd, buffer, 1024);
-
-  while (rd > 0)
-    {
-      wr = write(dest_fd, buffer, rd);
-      if (wr != rd || dest_fd == -1)
+	ofd = open(src, O_RDONLY);
+	if (!src || ofd == -1)
 	{
-	  dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
-	  exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+		exit(98);
 	}
-    }
 
-  if (rd == -1)
-    {
-      dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
-      exit(98);
-    }
-  
-  if (close(source_fd) == -1)
-    {
-      dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
-      exit(100);
-    }
+	tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((readed = read(ofd, buff, 1024)) > 0)
+	{
+		if (write(tfd, buff, readed) != readed || tfd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
+			exit(99);
+		}
+	}
 
-  if (close(dest_fd) == -1)
-    {
-      dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
-      exit(100);
-    }
+	if (readed == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+		exit(98);
+	}
+
+	if (close(ofd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofd);
+		exit(100);
+	}
+
+	if (close(tfd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tfd);
+		exit(100);
+	}
 }
 
 /**
@@ -58,13 +55,12 @@ void copy_file(char *source, char *dest)
  */
 int main(int argc, char *argv[])
 {
-  if (argc != 3)
-    {
-      dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-      exit(97);
-    }
+if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
-  copy_file(argv[1], argv[2]);
-  
-  exit(0);
+	copy_file(argv[1], argv[2]);
+	exit(0);
 }
