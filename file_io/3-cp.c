@@ -17,7 +17,7 @@ void copy_file(const char *source, const char *dest)
       exit(98);
     }
 
-  dest_fd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+  dest_fd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
   while ((rd = read(source_fd, buffer, 1024)) > 0)
     {
